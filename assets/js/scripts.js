@@ -30,54 +30,13 @@ const hiddenDivElementsSmooth = document.querySelectorAll('.nsm');
 hiddenDivElementsSmooth.forEach((el) => elementObserverSmooth.observe(el));
 
 
-
-// Price Checkout
-function updateTotal() {
-    let basePrice = 30, sizePrice = 0, colorPrice = 0, shippingPrice = 0;
-    function checkSize() {
-            if (document.getElementById('size0').checked) {
-                sizePrice += 0;
-            }
-            if (document.getElementById('size1').checked) {
-                sizePrice += 5;
-            }
-            if (document.getElementById('size2').checked) {
-                sizePrice += 10;
-            }
-        } // size end
-    checkSize()
-        function checkColor() {
-            if (document.getElementById('color0').checked) {
-                document.getElementById('p-img').src = '/assets/images/products/diamond.jpg';
-                colorPrice += 0;
-            }
-            if (document.getElementById('color1').checked) {
-                document.getElementById('p-img').src = '/assets/images/products/gold.jpg';
-                colorPrice += 5;
-            }
-        } // size end
-    checkColor()
-    function checkShipping() {
-        if (document.getElementById('zakho').checked) {
-            shippingPrice += 2;
-        }
-        if (document.getElementById('duhok').checked) {
-            shippingPrice += 3;
-        }
-        if (document.getElementById('erbil').checked) {
-            shippingPrice += 6;
-        }
-    }
-    checkShipping()
-
-    const totalPrice = basePrice + sizePrice + colorPrice + shippingPrice;
-    document.getElementById('size').innerHTML = "+ $" + sizePrice + ".00";
-    document.getElementById('color').innerHTML = "+ $" + colorPrice + ".00";
-    document.getElementById('delivery').innerHTML = "+ $" + shippingPrice + ".00";
-    document.getElementById('price').innerHTML = "$" + totalPrice + ".00";
-} // total end
-
 // size values
+function myProduct() {
+    var product = document.getElementById("product").value;
+    document.getElementById("product_value").innerHTML = product;
+}
+myProduct();
+
 function mySize() {
     var radioBtn = document.getElementsByName("size");
     var c;
@@ -89,7 +48,7 @@ function mySize() {
 
     document.getElementById("size_value").innerHTML = c;
 }
-
+mySize();
 // color values
 function myColor() {
     var radioBtn = document.getElementsByName("color");
@@ -101,10 +60,40 @@ function myColor() {
     }
 
     document.getElementById("color_value").innerHTML = c;
-}
+};
+myColor();
+// delivery values
+function myDelivery() {
+    var radioBtn = document.getElementsByName("delivery");
+    var c;
+    for(i=0; i<radioBtn.length; i++){
+        if(radioBtn[i].checked){
+            c = radioBtn[i].value;
+        }
+    }
+
+    document.getElementById("delivery_value").innerHTML = c;
+};
+
+// IMG Generation
+var x = document.getElementById("p-img").src;    
+        
+          
+function genProImg() {
+    var img = document.createElement('img');
+    img.src = x;
+    img.setAttribute('alt', 'na');
+    img.setAttribute('id', 'ProductImg');
+    img.setAttribute('class', 'checkoutIMG');
+    document.getElementById('ProductImg').appendChild(img);
+};
 
 
-
+// Delete the Old generatred IMG
+var OldImg = document.getElementById("ProductImg");
+  function delOldImg() {
+    OldImg.remove();
+  }
 
 // checkout
 var modal = document.getElementById("myCheckout");
@@ -125,6 +114,8 @@ window.onclick = function(event) {
     }
 }
 
+
+// Form Submit
 function myOrder() {
     document.getElementById("Order").submit();
 }

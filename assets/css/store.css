@@ -3,11 +3,13 @@
         background: rgba(255, 255, 255, 0.5);
         box-shadow: 10px 10px 66px rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(64px) saturate(20%);
+        -webkit-backdrop-filter: blur(64px) saturate(20%);
     }
     .product-card {
         background: rgba(255, 255, 255, 0.5);
         box-shadow: 10px 10px 66px rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(64px) saturate(20%);
+        -webkit-backdrop-filter: blur(64px) saturate(20%);
     }
     .product-name {
         color: #333;
@@ -22,11 +24,13 @@
         background-color: rgba(43, 43, 43, 0.5);
         box-shadow: 10px 10px 66px rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(64px) saturate(20%);
+        -webkit-backdrop-filter: blur(64px) saturate(20%);
     }
     .product-card {
         background-color: rgba(43, 43, 43, 0.5);
         box-shadow: 10px 10px 66px rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(64px) saturate(20%);
+        -webkit-backdrop-filter: blur(64px) saturate(20%);
     }
     .product-name {
         color: #fff;
@@ -58,16 +62,15 @@
 
 
 .product-table {
-    display: flex;
-    margin-left: 125px;
-    margin-bottom: 75px;
-    overflow-x: scroll;
-    white-space: nowrap;
+    display: grid;
+    grid-template-columns: repeat(5, 385px);
+    margin: 0 95px;
+
 }
 
 .product-card {
-    margin-right: 20px;
-    margin-bottom: 20px;
+
+    margin: 10px 30px;
 
     height: 450px;
     width: 370px;
@@ -98,6 +101,12 @@
     padding-bottom: 20px;
 
 
+}
+.product-category {
+    font-size: 12px;
+    font-weight: 300;
+    color: #9c9c9c;
+    line-height: 10px;
 }
 .product-price {
     font-size: 20px;

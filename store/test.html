@@ -1,0 +1,45 @@
+<!DOCTYPE HTML> 
+<html> 
+  
+<head> 
+    <title> 
+        How to create an image element
+        dynamically using JavaScript ?
+    </title>     
+</head> 
+  
+<body id = "body" style = "text-align:center;"> 
+
+    <img id="p-img" src="/assets/images/product/1/pimg/diamond.jpg"/>
+      
+    <h1 style = "color:green;" > 
+        GeeksforGeeks 
+    </h1> 
+      
+<div id="ProductImg"></div>
+      
+
+    
+
+      
+      
+    <script> 
+    
+    	    var x = document.getElementById("p-img").src;    
+        
+          
+        function generateProductImg() {
+            var img = document.createElement('img');
+            img.src = x;
+            img.setAttribute('alt', 'na');
+            img.setAttribute('height', '400px');
+            img.setAttribute('width', '400px');
+            document.getElementById('ProductImg').appendChild(img);
+        };
+        generateProductImg();
+
+        var id
+    </script> 
+</body> 
+  
+</html>
